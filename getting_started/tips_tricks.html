@@ -1,0 +1,1127 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tips, Tricks, and Hacks &mdash; eleanor 1.0.4 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="eleanor 1.0.4 documentation" href="../index.html"/>
+        <link rel="next" title="Visualizing &amp; Crossmatching your Light Curve" href="vis_crossmatch.html"/>
+        <link rel="prev" title="Quickstart Tutorial" href="tutorial.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eleanor
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About eleanor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Quickstart Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tips, Tricks, and Hacks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1.1-Choosing-an-Aperture">1.1 Choosing an Aperture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.2-Adding-or-Removing-Flux-Correction-Terms">1.2 Adding or Removing Flux Correction Terms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#1.2.1-Changing-quality-flags">1.2.1 Changing quality flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#1.2.2-Removing-terms-from-the-model">1.2.2 Removing terms from the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#1.2.3-Adding-new-terms-to-the-model">1.2.3 Adding new terms to the model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#1.3-Making-a-PSF-based-light-curve">1.3 Making a PSF-based light curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.4-Running-eleanor-locally/without-internet">1.4 Running eleanor locally/without internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.5-Targets-without-TIC-IDs">1.5 Targets without TIC IDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.6-Saturated-targets">1.6 Saturated targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.7-Putting-it-all-together:-recovering-\pi-Men-c">1.7 Putting it all together: recovering <span class="math notranslate nohighlight">\(\pi\)</span> Men c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.8-Updating-eleanor">1.8 Updating eleanor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.8-Other-tips,-tricks,-or-hacks">1.8 Other tips, tricks, or hacks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vis_crossmatch.html">Visualizing &amp; Crossmatching your Light Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">eleanor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">eleanor</a> &raquo;</li>
+      
+    
+      <li>Tips, Tricks, and Hacks</li>
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Tips,-Tricks,-and-Hacks">
+<h1>Tips, Tricks, and Hacks<a class="headerlink" href="#Tips,-Tricks,-and-Hacks" title="Permalink to this headline">¶</a></h1>
+<p>In the tutorial notebook, we learned how to make light curves for stars observed in a single sector or in multiple sectors. In this notebook we’ll explore how to make the most of these data and ensure your signal is real.</p>
+<div class="section" id="1.1-Choosing-an-Aperture">
+<h2>1.1 Choosing an Aperture<a class="headerlink" href="#1.1-Choosing-an-Aperture" title="Permalink to this headline">¶</a></h2>
+<p>Let’s begin with the same WASP-100 we used in the quickstart tutorial. I’m going to hide warnings too, just to make it easier to see what’s going on.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>from IPython.display import Image
+
+import warnings
+warnings.filterwarnings(&#39;ignore&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>import eleanor
+import numpy as np
+import matplotlib.pyplot as plt
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>star = eleanor.Source(tic=38846515, sector=1)
+data = eleanor.TargetData(star, height=15, width=15, bkg_size=31, do_psf=True, do_pca=True)
+q = data.quality == 0
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_bkg.fits with expected size 78955200. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc.fits with expected size 158022720. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1_tess_v2_pm.txt with expected size 237847. [astroquery.query]
+WARNING:tensorflow:From /Users/bmontet/research/tess/eleanor/eleanor/targetdata.py:837: The name tf.logging.set_verbosity is deprecated. Please use tf.compat.v1.logging.set_verbosity instead.
+
+WARNING:tensorflow:From /Users/bmontet/research/tess/eleanor/eleanor/targetdata.py:837: The name tf.logging.ERROR is deprecated. Please use tf.compat.v1.logging.ERROR instead.
+
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 1282/1282 [00:10&lt;00:00, 113.98it/s]
+</pre></div></div>
+</div>
+<p>What if you’re not satisfied with <span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span>’s default choice of aperture? Well, we provide you with three ways to explore different apertures.</p>
+<ol class="arabic simple">
+<li><p>All of the apertures <span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> tries behind the scenes are saved! So are their raw and corrected light curves. These are stored as <code class="docutils literal notranslate"><span class="pre">data.all_apertures</span></code>, <code class="docutils literal notranslate"><span class="pre">data.all_raw_flux</span></code>, and <code class="docutils literal notranslate"><span class="pre">data.all_corr_flux</span></code>, respectively. We can explore these options by calling the following, for example.</p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(15,4), gridspec_kw={&#39;width_ratios&#39;:[1,3]})
+ax1.imshow(data.tpf[0])
+ax1.imshow(data.all_apertures[0], cmap=&#39;Greys&#39;, alpha=0.7)
+ax1.set_title(&#39;Aperture over TPF&#39;)
+
+ax2.plot(data.time[q], data.all_raw_flux[0][q]/np.nanmedian(data.all_raw_flux[0][q]), &#39;k&#39;, label=&#39;Raw&#39;)
+ax2.plot(data.time[q], data.all_corr_flux[0][q]/np.nanmedian(data.all_corr_flux[0][q]) - 0.015, &#39;r&#39;, label=&#39;Corrected&#39;)
+ax2.set_xlabel(&#39;Time [BJD - 2457000]&#39;)
+ax2.set_ylabel(&#39;Normalized Flux&#39;)
+ax2.legend();
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_8_0.png" src="../_images/getting_started_tips_tricks_8_0.png" />
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> can help you create your own mask. By calling <code class="docutils literal notranslate"><span class="pre">eleanor.custom_aperture()</span></code>, we can choose from a circular or rectangular aperture. We can also choose the size (radius or length x width) and the pixel the aperture is centered on by passing in a list of <span class="math notranslate nohighlight">\(\textit{(x,y)}\)</span> to <code class="docutils literal notranslate"><span class="pre">pos</span></code>. The aperture will only be created on pixels within the TPF (it won’t spill over to other pixels). Calling <code class="docutils literal notranslate"><span class="pre">eleanor.custom_aperture()</span></code> overwrites <code class="docutils literal notranslate"><span class="pre">eleanor.TargetData.aperture</span></code>,
+<code class="docutils literal notranslate"><span class="pre">eleanor.TargetData.raw_flux</span></code>, and <code class="docutils literal notranslate"><span class="pre">eleanor.TargetData.corr_flux</span></code>.</p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>eleanor.TargetData.custom_aperture(data, shape=&#39;circle&#39;, r=2, pos=[7,6], method=&#39;exact&#39;)
+eleanor.TargetData.get_lightcurve(data)
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(15,4), gridspec_kw={&#39;width_ratios&#39;:[1,3]})
+ax1.imshow(data.tpf[0])
+ax1.imshow(data.aperture, cmap=&#39;Greys&#39;, alpha=0.5)
+ax1.set_title(&#39;Aperture over TPF&#39;)
+#plt.imshow(data.aperture)
+
+ax2.plot(data.time[q], data.raw_flux[q]/np.nanmedian(data.raw_flux[q]), &#39;k&#39;, label=&#39;Raw&#39;)
+ax2.plot(data.time[q], data.corr_flux[q]/np.nanmedian(data.corr_flux[q]) - 0.015, &#39;r&#39;, label=&#39;Corrected&#39;)
+ax2.legend()
+ax2.set_xlabel(&#39;Time [BJD - 2457000]&#39;)
+ax2.set_ylabel(&#39;Normalized Flux&#39;);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_10_0.png" src="../_images/getting_started_tips_tricks_10_0.png" />
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>We can pass in our own mask by creating a 2D array of the same shape as the TPF and calling eleanor.TargetData.get_lightcurve(aperture=mask)</p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>mask = np.zeros(np.shape(data.tpf[0]))
+mask[6:8,6:8] = 1
+data.get_lightcurve(aperture=mask)
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(15,4), gridspec_kw={&#39;width_ratios&#39;:[1,3]})
+ax1.imshow(data.tpf[0])
+ax1.imshow(mask, cmap=&#39;Greys&#39;, alpha=0.5)
+ax1.set_title(&#39;Aperture over TPF&#39;)
+#plt.imshow(data.aperture)
+
+ax2.plot(data.time[q], data.raw_flux[q]/np.nanmedian(data.raw_flux[q]), &#39;k&#39;, label=&#39;Raw&#39;)
+ax2.plot(data.time[q], data.corr_flux[q]/np.nanmedian(data.corr_flux[q]) - 0.035, &#39;r&#39;, label=&#39;Corrected&#39;)
+ax2.legend()
+ax2.set_xlabel(&#39;Time [BJD - 2457000]&#39;)
+ax2.set_ylabel(&#39;Normalized Flux&#39;);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_12_0.png" src="../_images/getting_started_tips_tricks_12_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="1.2-Adding-or-Removing-Flux-Correction-Terms">
+<h2>1.2 Adding or Removing Flux Correction Terms<a class="headerlink" href="#1.2-Adding-or-Removing-Flux-Correction-Terms" title="Permalink to this headline">¶</a></h2>
+<p>When we call eleanor.TargetData(), some simple systematics corrections are automatically performed on the light curve. Let’s apply those explicitly to the newly created raw light curve from the custom aperture and see how we can change them.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>corr_flux = eleanor.TargetData.corrected_flux(data, flux=data.raw_flux)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.figure(figsize=(15,5))
+plt.plot(data.time[q], corr_flux[q], &#39;k&#39;)
+
+plt.ylabel(&#39;Flux&#39;, fontsize=24)
+plt.xlabel(&#39;Time&#39;, fontsize=24);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_16_0.png" src="../_images/getting_started_tips_tricks_16_0.png" />
+</div>
+</div>
+<div class="section" id="1.2.1-Changing-quality-flags">
+<h3>1.2.1 Changing quality flags<a class="headerlink" href="#1.2.1-Changing-quality-flags" title="Permalink to this headline">¶</a></h3>
+<p>If we think certain data are bad, but not quality flagged, we can give them a different quality label and re-run this function, causing them to be ignored so they do not influence other cadences. By default, all highest quality data have flag zero and all other flags are positive. Let’s throw out a four-day chunk temporarily:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>data.quality[q][(data.time[q] &gt; 1333) &amp; (data.time[q] &lt; 1337)] = -8675309
+corr_flux = eleanor.TargetData.corrected_flux(data, flux=data.raw_flux)
+
+q = data.quality &lt;= 0.5
+
+plt.figure(figsize=(15,5))
+plt.plot(data.time[q], corr_flux[q], &#39;k&#39;)
+
+plt.ylabel(&#39;Flux&#39;, fontsize=24)
+plt.xlabel(&#39;Time&#39;, fontsize=24);
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_19_0.png" src="../_images/getting_started_tips_tricks_19_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="1.2.2-Removing-terms-from-the-model">
+<h3>1.2.2 Removing terms from the model<a class="headerlink" href="#1.2.2-Removing-terms-from-the-model" title="Permalink to this headline">¶</a></h3>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">corrected_flux</span></code> function removes signals that are correlated with the position of the star on the detector, with common modes of nearby stars, and with the background. We can stop these from being a part of <code class="docutils literal notranslate"><span class="pre">corrected_flux</span></code> by setting them to zero.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>data.cbvs = np.zeros_like(data.cbvs)
+data.centroid_xs = np.zeros_like(data.centroid_xs)
+data.centroid_ys = np.zeros_like(data.centroid_ys)
+
+corr_flux = eleanor.TargetData.corrected_flux(data, flux=data.raw_flux)
+
+plt.figure(figsize=(15,5))
+plt.plot(data.time[q], corr_flux[q], &#39;k&#39;)
+
+plt.ylabel(&#39;Flux&#39;, fontsize=24)
+plt.xlabel(&#39;Time&#39;, fontsize=24);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_22_0.png" src="../_images/getting_started_tips_tricks_22_0.png" />
+</div>
+</div>
+<p>In this case, we have a noisier light curve that looks more like the raw flux.</p>
+<p>We can always get back to where we started by just re-running <code class="docutils literal notranslate"><span class="pre">eleanor.TargetData()</span></code> with the same call we used initially.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>data = eleanor.TargetData(star, height=15, width=15, bkg_size=31, do_psf=True, do_pca=True)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 1282/1282 [00:11&lt;00:00, 114.33it/s]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="1.2.3-Adding-new-terms-to-the-model">
+<h3>1.2.3 Adding new terms to the model<a class="headerlink" href="#1.2.3-Adding-new-terms-to-the-model" title="Permalink to this headline">¶</a></h3>
+<p>What if you have additional information that you believe might be correlated with the star’s raw flux? You can add these in to the <code class="docutils literal notranslate"><span class="pre">corrected_flux</span></code> function as <code class="docutils literal notranslate"><span class="pre">regressors</span></code>. Any <span class="math notranslate nohighlight">\(N\)</span> regressors can be passed through as an array with shape (<code class="docutils literal notranslate"><span class="pre">data.time,</span> <span class="pre">N</span></code>).</p>
+<p>For example, we’ve found that often, some of the parameters that describe the shape of the PSF make very good regressors to produce a clean, systematics-corrected light curve:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>reg_array = np.array([data.psf_b, data.psf_c, data.psf_x]).T
+corr_flux = eleanor.TargetData.corrected_flux(data, flux=data.raw_flux, regressors=reg_array)
+
+plt.figure(figsize=(15,5))
+plt.plot(data.time[q], corr_flux[q], &#39;k&#39;)
+
+plt.ylabel(&#39;Flux&#39;, fontsize=24)
+plt.xlabel(&#39;Time&#39;, fontsize=24);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_29_0.png" src="../_images/getting_started_tips_tricks_29_0.png" />
+</div>
+</div>
+<p>You could also regress against nearby pixels, other stars, random noise, or any other length <code class="docutils literal notranslate"><span class="pre">data.time</span></code> array you can imagine.</p>
+</div>
+</div>
+<div class="section" id="1.3-Making-a-PSF-based-light-curve">
+<h2>1.3 Making a PSF-based light curve<a class="headerlink" href="#1.3-Making-a-PSF-based-light-curve" title="Permalink to this headline">¶</a></h2>
+<p>By setting <code class="docutils literal notranslate"><span class="pre">do_psf</span> <span class="pre">=</span> <span class="pre">True</span></code> in your call to <code class="docutils literal notranslate"><span class="pre">eleanor.TargetData()</span></code>, you can model the PSF as a single 2D Gaussian that can change shape or position from cadence to cadence.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>eleanor.TargetData.psf_lightcurve(data, model=&#39;gaussian&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 1282/1282 [00:10&lt;00:00, 118.43it/s]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>lk = data.to_lightkurve(flux=data.psf_flux)
+lk.plot();
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_34_0.png" src="../_images/getting_started_tips_tricks_34_0.png" />
+</div>
+</div>
+<p>There are a few tricks we can use to improve this light curve. This is an incomplete list, check the docs for full details.</p>
+<p>For this star, there are two bright stars in the TPF. We can model them both simultaneously by passing through <code class="docutils literal notranslate"><span class="pre">nstars=2</span></code> and giving an initial guess on their positions. The code will keep the relative positions of the two stars fixed, moving both of them from cadence to cadence in the same way.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>eleanor.TargetData.psf_lightcurve(data, model=&#39;gaussian&#39;, nstars=2, xc=[3.1, 7.0], yc=[6.8, 6.2])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 1282/1282 [00:14&lt;00:00, 87.74it/s]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.figure(figsize=(15,5))
+plt.plot(data.time[q], data.all_psf[q,0]/np.nanmedian(data.all_psf[q,0])+0.015, &#39;r&#39;)
+plt.plot(data.time[q], data.all_psf[q,1]/np.nanmedian(data.all_psf[q,1]), &#39;k&#39;)
+
+
+plt.ylabel(&#39;Flux&#39;, fontsize=24)
+plt.xlabel(&#39;Time&#39;, fontsize=24);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_38_0.png" src="../_images/getting_started_tips_tricks_38_0.png" />
+</div>
+</div>
+<p>In this case, we can tell very obviously what star the transit is on!</p>
+<p>We can also pass through a different error array, request a Moffat profile model, a Poisson likelihood function, or even pass through a different TPF!</p>
+</div>
+<div class="section" id="1.4-Running-eleanor-locally/without-internet">
+<h2>1.4 Running eleanor locally/without internet<a class="headerlink" href="#1.4-Running-eleanor-locally/without-internet" title="Permalink to this headline">¶</a></h2>
+<p>With the default settings, <code class="docutils literal notranslate"><span class="pre">eleanor</span></code> will attempt to find the proper postcard for your target, as well as other data about your system, through MAST. If you don’t have internet access, but have downloaded your postcard already (if you’ve made a light curve for your star of interest previously, you may already have the postcard in your <code class="docutils literal notranslate"><span class="pre">~/.eleanor</span></code> directory), you can avoid all need for the internet with a few simple tricks.</p>
+<p>All you need to do are pass through <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">=</span> <span class="pre">True</span></code> in your call to <code class="docutils literal notranslate"><span class="pre">eleanor.Source()</span></code> and give the directory of your postcard and pointing model. By default, these are downloaded to the same directory. If you don’t pass through a pointing model directory, it will assume it’s in the same place as your postcard. I’ve put mine in <code class="docutils literal notranslate"><span class="pre">../../testdir1</span></code> and <code class="docutils literal notranslate"><span class="pre">../../testdir2</span></code>, respectively.</p>
+<p>You also need to pass through your star’s coordinates. Normally you can pass through one of a name, TIC ID, Gaia DR2, ID, or coordinates. In these cases, behind the scenes <code class="docutils literal notranslate"><span class="pre">eleanor</span></code> will use any one of these to get the rest of this information, but behind the scenes relies on the coordinates. You need to pass through the other values as well, but just so they’re set to something so <code class="docutils literal notranslate"><span class="pre">eleanor</span></code> doesn’t try to look them up. You can set them to zero, that’s fine.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>coords = (68.959732, -64.02704)
+star = eleanor.Source(coords=coords, tic=0, gaia=0, sector=1, local=True, post_dir=&#39;./testdir1&#39;, pm_dir=&#39;./testdir2&#39;)
+data = eleanor.TargetData(star, do_pca=True, do_psf=False)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.figure(figsize=(15,5))
+
+q = data.quality == 0
+plt.plot(data.time[q], corr_flux[q], &#39;k&#39;)
+
+plt.ylabel(&#39;Flux&#39;, fontsize=24)
+plt.xlabel(&#39;Time&#39;, fontsize=24);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_46_0.png" src="../_images/getting_started_tips_tricks_46_0.png" />
+</div>
+</div>
+<p>The only thing that will be missing is <code class="docutils literal notranslate"><span class="pre">star.tess_mag</span></code>, but you can set that yourself too before you run <code class="docutils literal notranslate"><span class="pre">data.save()</span></code> and it will be recorded properly.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>star.tess_mag = 10.53
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="1.5-Targets-without-TIC-IDs">
+<h2>1.5 Targets without TIC IDs<a class="headerlink" href="#1.5-Targets-without-TIC-IDs" title="Permalink to this headline">¶</a></h2>
+<p>When you pass through <code class="docutils literal notranslate"><span class="pre">coords</span></code> into <code class="docutils literal notranslate"><span class="pre">eleanor.Source()</span></code>, it will use these coordinates to find the TIC entry at that location. However, some targets (often very faint or non-stellar in nature) do not appear in the TIC. This will produce an error that inhibits <code class="docutils literal notranslate"><span class="pre">eleanor.Source()</span></code> from running successfully. However, as we noted in the previous section, <code class="docutils literal notranslate"><span class="pre">eleanor</span></code> does not use the TIC ID behind the scenes. Passing through a false TIC ID and the proper coordinates will work just fine.</p>
+</div>
+<div class="section" id="1.6-Saturated-targets">
+<h2>1.6 Saturated targets<a class="headerlink" href="#1.6-Saturated-targets" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">eleanor</span></code> tests a variety of apertures and selects the one with the lowest CDPP. Very saturated targets (<span class="math notranslate nohighlight">\(T &lt; 6-7\)</span>, depending on location on the detector) have many pixels at the saturation limit. Choosing a small number of saturated pixels will then produce a very stable light curve, leading <code class="docutils literal notranslate"><span class="pre">eleanor</span></code> to choose very small apertures that do not represent the true astrophysical variability from these sources. To make light curves from these, we need to use larger apertures. This is
+possible!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>star = eleanor.Source(name=&#39;alpha draconis&#39;, sector=15)
+data = eleanor.TargetData(star, height=31, width=13)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+No eleanor postcard has been made for your target (yet). Using TessCut instead.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.imshow(data.tpf[300]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_54_0.png" src="../_images/getting_started_tips_tricks_54_0.png" />
+</div>
+</div>
+<p>Yes, that’s a saturated target. Let’s define our own aperture and go forth.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>ap = np.zeros_like(data.tpf[300])
+
+ap[:,4:11] = 1
+
+
+data.get_lightcurve(aperture=ap)
+q = data.quality == 0
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(15,4), gridspec_kw={&#39;width_ratios&#39;:[1,3]})
+ax1.imshow(data.tpf[0])
+ax1.imshow(data.aperture, cmap=&#39;Greys&#39;, alpha=0.5)
+ax1.set_title(&#39;Aperture over TPF&#39;)
+#plt.imshow(data.aperture)
+
+ax2.plot(data.time[q], data.corr_flux[q]/np.nanmedian(data.corr_flux[q]) - 0.0, &#39;k&#39;)
+ax2.set_ylim(0.999, 1.0004)
+ax2.set_xlabel(&#39;Time [BJD - 2457000]&#39;)
+ax2.set_ylabel(&#39;Normalized Flux&#39;);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_56_0.png" src="../_images/getting_started_tips_tricks_56_0.png" />
+</div>
+</div>
+<p>Alpha draconis, with <span class="math notranslate nohighlight">\(V=3.7\)</span>, has a deep secondary eclipse as reported in Bedding et al. (2020), and the star is so bright the photon noise is at the few ppm level on 30-minute timescales.</p>
+<p>It often works very well for bright, saturated targets to use additional regressors, drawing on the corner pixels of the TPF to use on the detrending. An example of this is below.</p>
+</div>
+<div class="section" id="1.7-Putting-it-all-together:-recovering-\pi-Men-c">
+<h2>1.7 Putting it all together: recovering <span class="math notranslate nohighlight">\(\pi\)</span> Men c<a class="headerlink" href="#1.7-Putting-it-all-together:-recovering-\pi-Men-c" title="Permalink to this headline">¶</a></h2>
+<p>Let’s make sure we can recover the planet discovered with TESS data around the bright star <span class="math notranslate nohighlight">\(\pi\)</span> Mensae, combining what we have learned about saturated targets with the addition of regressing against corner pixels in the TPF for improved background subtraction.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>star = eleanor.Source(name=&#39;pi Mensae&#39;, sector=1)
+data = eleanor.TargetData(star, height=21, width=13)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-2-cal-1588-0268_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-2-cal-1588-0268_tess_v2_bkg.fits with expected size 78955200. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-2-cal-1588-0268_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-2-cal-1588-0268_tess_v2_pc.fits with expected size 158022720. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-2-cal-1588-0268_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-2_tess_v2_pm.txt with expected size 239144. [astroquery.query]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.imshow(data.tpf[300]);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_61_0.png" src="../_images/getting_started_tips_tricks_61_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>ap = np.zeros_like(data.tpf[300])
+ap[:,3:10] = 1
+
+
+data.get_lightcurve(aperture=ap)
+corr_flux = eleanor.TargetData.corrected_flux(data, flux=data.raw_flux, regressors=&#39;corner&#39;)
+q = data.quality == 0
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(15,4), gridspec_kw={&#39;width_ratios&#39;:[1,3]})
+ax1.imshow(data.tpf[0])
+ax1.imshow(data.aperture, cmap=&#39;Greys&#39;, alpha=0.5)
+ax1.set_title(&#39;Aperture over TPF&#39;)
+#plt.imshow(data.aperture)
+
+ax2.plot(data.time[q], corr_flux[q]/np.nanmedian(corr_flux[q]) - 0.0, &#39;k&#39;)
+ax2.set_xlabel(&#39;Time [BJD - 2457000]&#39;)
+ax2.set_ylabel(&#39;Normalized Flux&#39;);
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_62_0.png" src="../_images/getting_started_tips_tricks_62_0.png" />
+</div>
+</div>
+<p>It looks like there’s a planet here! Let’s fold on the known period and phase:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(15,4), gridspec_kw={&#39;width_ratios&#39;:[1,3]})
+ax1.imshow(data.tpf[0])
+ax1.imshow(data.aperture, cmap=&#39;Greys&#39;, alpha=0.5)
+ax1.set_title(&#39;Aperture over TPF&#39;)
+#plt.imshow(data.aperture)
+
+modtime = np.mod(data.time[q], 6.268)-2.96
+
+ax2.plot(modtime, corr_flux[q]/np.nanmedian(corr_flux[q]) - 0.0, &#39;k.&#39;)
+ax2.set_xlabel(&#39;Time [BJD - 2457000]&#39;)
+ax2.set_ylabel(&#39;Normalized Flux&#39;);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tips_tricks_64_0.png" src="../_images/getting_started_tips_tricks_64_0.png" />
+</div>
+</div>
+<p>There it is!</p>
+</div>
+<div class="section" id="1.8-Updating-eleanor">
+<h2>1.8 Updating eleanor<a class="headerlink" href="#1.8-Updating-eleanor" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">eleanor</span></code> should not need a version upgrade to handle new sectors of data. Calling <code class="docutils literal notranslate"><span class="pre">eleanor.Source</span></code> on a new sector of data should download all the required metadata to produce light curves for that sector. If you are getting errors, it is worth trying to remove the <code class="docutils literal notranslate"><span class="pre">~/.eleanor/metadata/sNNNN</span></code> directory, where <code class="docutils literal notranslate"><span class="pre">NNNN</span></code> corresponds to the sector in question and trying again. You can also try explicitly acquiring the metadata for a given sector by calling <code class="docutils literal notranslate"><span class="pre">eleanor.Update()</span></code>. This shouldn’t
+take long, but the exact time will depend on the strength of your internet connection.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>eleanor.Update(sector=20);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Downloading URL https://mast.stsci.edu/tesscut/api/v0.1/astrocut?ra=248.96111249999996&amp;dec=63.911075&amp;y=31&amp;x=31&amp;units=px&amp;sector=20 to ./tesscut_20200715143124.zip ... [Done]
+Inflating...
+This is the first light curve you have made for this sector. Getting eleanor metadata products for Sector 20...
+This will only take a minute, and only needs to be done once. Any other light curves you make in this sector will be faster.
+Target Acquired
+Cadences Calculated
+Quality Flags Assured
+CBVs Made
+Success! Sector 20 now available.
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="1.8-Other-tips,-tricks,-or-hacks">
+<h2>1.8 Other tips, tricks, or hacks<a class="headerlink" href="#1.8-Other-tips,-tricks,-or-hacks" title="Permalink to this headline">¶</a></h2>
+<p>This is of course an incomplete list of things that work to optimise the creation or interepretation of TESS FFI light curves. If you have any other ones, let us know! This tutorial lives as a Jupyter notebook on the <code class="docutils literal notranslate"><span class="pre">eleanor</span></code> GitHub repository; pull requests are welcomed!</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vis_crossmatch.html" class="btn btn-neutral float-right" title="Visualizing &amp; Crossmatching your Light Curve" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tutorial.html" class="btn btn-neutral" title="Quickstart Tutorial" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2020, Adina D. Feinstein.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../None"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

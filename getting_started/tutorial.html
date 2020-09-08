@@ -1,0 +1,875 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quickstart Tutorial &mdash; eleanor 1.0.4 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="eleanor 1.0.4 documentation" href="../index.html"/>
+        <link rel="next" title="Tips, Tricks, and Hacks" href="tips_tricks.html"/>
+        <link rel="prev" title="Installation" href="installation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eleanor
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About eleanor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1.1-Fast-Light-Curves">1.1 Fast Light Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.2-Stars-Observed-in-Multiple-Sectors">1.2 Stars Observed in Multiple Sectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#1.3-Good-practices">1.3 Good practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tips_tricks.html">Tips, Tricks, and Hacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vis_crossmatch.html">Visualizing &amp; Crossmatching your Light Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">eleanor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">eleanor</a> &raquo;</li>
+      
+    
+      <li>Quickstart Tutorial</li>
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Quickstart-Tutorial">
+<h1>Quickstart Tutorial<a class="headerlink" href="#Quickstart-Tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="1.1-Fast-Light-Curves">
+<h2>1.1 Fast Light Curves<a class="headerlink" href="#1.1-Fast-Light-Curves" title="Permalink to this headline">¶</a></h2>
+<p>As a simple first example, we will use <span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> to create a target pixel file (TPF) and light curve for a given TIC target.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>from IPython.display import Image
+
+import warnings
+warnings.filterwarnings(&#39;ignore&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>import eleanor
+import numpy as np
+from astropy import units as u
+import matplotlib.pyplot as plt
+from astropy.coordinates import SkyCoord
+</pre></div>
+</div>
+</div>
+<p>First, we will load the data for TIC 38846515 (WASP-100), a relatively bright star observed in Sector 1. <span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> is able to extract a light curve easily and automatically for this unblended object. Calling source will assign a <span class="math notranslate nohighlight">\(\textit{Gaia}\)</span> DR2 ID, TESS magnitude, sector, camera, ccd, and associated postcard.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>star = eleanor.Source(tic=38846515, sector=1)
+
+print(&#39;Found TIC {0} (Gaia {1}), with TESS magnitude {2}, RA {3}, and Dec {4}&#39;
+     .format(star.tic, star.gaia, star.tess_mag, star.coords[0], star.coords[1]))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_bkg.fits with expected size 78955200. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc.fits with expected size 158022720. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1_tess_v2_pm.txt with expected size 237847. [astroquery.query]
+Found TIC 38846515 (Gaia 4675352109658261376), with TESS magnitude 10.3157, RA 68.9597092399964, and Dec -64.0270368810381
+</pre></div></div>
+</div>
+<p>Here, the software is connecting to the MAST servers to download an <span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> postcard file, postcard background file, and the pointing model for that sector-camera-CCD. A postcard is a 104 <span class="math notranslate nohighlight">\(\times\)</span> 148 pixel cutout region of the entire FFI. The postcard background file is a 2D-interpolated background model across the postcard. The pointing model is an additional file created that performs an affine transformation on top of the WCS to ensure the most accurate pixel location
+of your target is.</p>
+<p>If you do not know what sector your target was observed in, calling <code class="docutils literal notranslate"><span class="pre">eleanor.Source()</span></code> without a sector keyword passed through explicitly will return the most recent sector for which the star was observed. If you think your target may have been observed in multiple sectors, you may want to consider <code class="docutils literal notranslate"><span class="pre">eleanor.multi_sectors()</span></code>, as described below.</p>
+<p>In addition to passing in a TIC ID, we can also pass through a Simbad-resolvable name, a Gaia DR2 ID, or an RA/Dec pair, either as a tuple or an Astropy SkyCoord object. For example, the following three calls all point to the same target:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>star = eleanor.Source(name=&#39;WASP-100&#39;, sector=1)
+
+print(&#39;Found TIC {0} (Gaia {1}), with TESS magnitude {2}, RA {3}, and Dec {4}&#39;
+     .format(star.tic, star.gaia, star.tess_mag, star.coords[0], star.coords[1]))
+
+coords = (68.959732, -64.02704)
+# or
+coords = SkyCoord(ra=68.959732, dec=-64.02704, unit=(u.deg, u.deg))
+
+star = eleanor.Source(coords=coords, sector=1)
+
+print(&#39;Found TIC {0} (Gaia {1}), with TESS magnitude {2}, RA {3}, and Dec {4}&#39;
+     .format(star.tic, star.gaia, star.tess_mag, star.coords[0], star.coords[1]))
+
+star = eleanor.Source(gaia=4675352109658261376, sector=1)
+
+print(&#39;Found TIC {0} (Gaia {1}), with TESS magnitude {2}, RA {3}, and Dec {4}&#39;
+     .format(star.tic, star.gaia, star.tess_mag, star.coords[0], star.coords[1]))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_bkg.fits with expected size 78955200. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc.fits with expected size 158022720. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1_tess_v2_pm.txt with expected size 237847. [astroquery.query]
+Found TIC 38846515 (Gaia 4675352109658261376), with TESS magnitude 10.3157, RA 68.95970916666666, and Dec -64.02703666666666
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_bkg.fits with expected size 78955200. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc.fits with expected size 158022720. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1_tess_v2_pm.txt with expected size 237847. [astroquery.query]
+Found TIC 38846515 (Gaia 4675352109658261376), with TESS magnitude 10.3157, RA 68.959732, and Dec -64.02704
+Created TAP+ (v1.2.1) - Connection:
+        Host: gea.esac.esa.int
+        Use HTTPS: True
+        Port: 443
+        SSL Port: 443
+Created TAP+ (v1.2.1) - Connection:
+        Host: geadata.esac.esa.int
+        Use HTTPS: True
+        Port: 443
+        SSL Port: 443
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_bkg.fits with expected size 78955200. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc.fits with expected size 158022720. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1_tess_v2_pm.txt with expected size 237847. [astroquery.query]
+Found TIC 38846515 (Gaia 4675352109658261376), with TESS magnitude 10.3157, RA 68.95981586357303, and Dec -64.02703903114245
+</pre></div></div>
+</div>
+<p>Gaia has quite a bit of precision on the star’s position! Now that we have our <code class="docutils literal notranslate"><span class="pre">Source</span></code> information, we simply call the <code class="docutils literal notranslate"><span class="pre">eleanor.TargetData()</span></code> function, which will extract a target pixel file from the postcard, perform aperture photometry, and complete some simple systematics corrections. This function chooses an aperture which optimizes the light curve for transit searches.</p>
+<p>We can also set some operations when calling this function. For example, <code class="docutils literal notranslate"><span class="pre">do_pca</span> <span class="pre">=</span> <span class="pre">True</span></code> tells <span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> to use the cotrending basis vectors on a background subtracted light curve without any additional correction. And <code class="docutils literal notranslate"><span class="pre">do_psf</span> <span class="pre">=</span> <span class="pre">True</span></code> creates a point spread function modeled light curve of our target.</p>
+<p>We can also pass through a <code class="docutils literal notranslate"><span class="pre">regressors</span></code> argument that is either a list of arrays of length time or <code class="docutils literal notranslate"><span class="pre">'corner'</span></code>. These will be passed in as other terms to regress against in the detrending. If <code class="docutils literal notranslate"><span class="pre">'corner'</span></code> is set, it will use the four pixels in the corners of the TPF to infer the background. <code class="docutils literal notranslate"><span class="pre">regressors</span></code> is an optional argument: if it is not set, no additional regressors will be used. This is shown in more detail in the <a class="reference external" href="http://adina.feinste.in/eleanor/getting_started/tips_tricks.html">tips, tricks, and
+hacks</a> notebook.</p>
+<p>In addition to automatically choosing an aperture, <code class="docutils literal notranslate"><span class="pre">eleanor.TargetData()</span></code> also tries a few different background subtractions to remove as much background noise as possible. The three options it tries are:</p>
+<ul class="simple">
+<li><p>1D postcard background : A constant (<span class="math notranslate nohighlight">\(3\mu + 2med\)</span>) is calculated from each postcard frame</p></li>
+<li><p>1D TPF background : A constant (<span class="math notranslate nohighlight">\(3\mu + 2med\)</span>) is calculated from each TPF frame</p></li>
+<li><p>2D background : The 2D background pixels are subtracted from the TPF</p></li>
+</ul>
+<p>For both 1D options, stars are masked before estimating the background value.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>data = eleanor.TargetData(star, height=15, width=15, bkg_size=31, do_psf=True, do_pca=True, regressors=&#39;corner&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+WARNING:tensorflow:From /Users/bmontet/research/tess/eleanor/eleanor/targetdata.py:837: The name tf.logging.set_verbosity is deprecated. Please use tf.compat.v1.logging.set_verbosity instead.
+
+WARNING:tensorflow:From /Users/bmontet/research/tess/eleanor/eleanor/targetdata.py:837: The name tf.logging.ERROR is deprecated. Please use tf.compat.v1.logging.ERROR instead.
+
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+100%|██████████| 1282/1282 [00:10&lt;00:00, 120.90it/s]
+</pre></div></div>
+</div>
+<p>Let’s look at our new light curves!</p>
+<p>Plotted below are the following: - Black : the raw light curve (aperture <span class="math notranslate nohighlight">\(\times\)</span> TPF + background subtraction) - Red : the corrected light curve (black light curve + additional corrections) - Green : the PCA light curve (aperture <span class="math notranslate nohighlight">\(\times\)</span> TPF + background subtraction + cotrending basis vectors) - Blue : the PSF modeled light curve</p>
+<p>Before plotting, we can use quality flags to mask poor quality data. Our quality flags are taken from the two-minute <span class="math notranslate nohighlight">\(\textit{TESS}\)</span> light curves and binned to 30-minutes. We are very generous with our masking, so any flag that applies to the entire FFI is marked in <code class="docutils literal notranslate"><span class="pre">data.quality</span></code>. We also introduce our own quality flag for when the pointing model significantly deviates from a best-fit line in the sector (see Figure 2 in Feinstein et al. 2019).</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.figure(figsize=(15,5))
+
+q = data.quality == 0
+
+plt.plot(data.time[q], data.raw_flux[q]/np.nanmedian(data.raw_flux[q])+0.06, &#39;k&#39;)
+plt.plot(data.time[q], data.corr_flux[q]/np.nanmedian(data.corr_flux[q]) + 0.03, &#39;r&#39;)
+plt.plot(data.time[q], data.pca_flux[q]/np.nanmedian(data.pca_flux[q]), &#39;g&#39;)
+plt.plot(data.time[q], data.psf_flux[q]/np.nanmedian(data.psf_flux[q]) - 0.02, &#39;b&#39;)
+plt.ylabel(&#39;Normalized Flux&#39;)
+plt.xlabel(&#39;Time [BJD - 2457000]&#39;)
+plt.title(&#39;WASP-100&#39;);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tutorial_12_0.png" src="../_images/getting_started_tutorial_12_0.png" />
+</div>
+</div>
+<p>There’s a planet there!</p>
+<p>For this star, we found the postcard level 1D background did a good job at removing additional noise in the data. We can check which background model was used by calling:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>data.bkg_type
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;TPF_2D_LEVEL&#39;
+</pre></div></div>
+</div>
+<p>We can even plot the background as a function of time to see what was removed from our light curve. All three background models are saved and can be called by the following:</p>
+<ul class="simple">
+<li><p>1D postcard background : data.bkg_type = ‘PC_LEVEL’ : keyword = data.flux_bkg</p></li>
+<li><p>1D TPF background : data.bkg_type = ‘TPF_LEVEL’ : keyword = data.tpf_flux_bkg</p></li>
+<li><p>2D TPF backround : data.bkg_type = ‘TPF_2D_LEVEL’ : keyword = data.bkg_tpf</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.figure(figsize=(15,5))
+
+plt.plot(data.time, data.flux_bkg, &#39;k&#39;, label=&#39;1D postcard&#39;, linewidth=3)
+plt.plot(data.time, data.tpf_flux_bkg, &#39;r--&#39;, label=&#39;1D TPF&#39;, linewidth=2)
+plt.ylabel(&#39;Normalized Flux&#39;)
+plt.xlabel(&#39;Time [BJD - 2457000]&#39;)
+plt.legend();
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tutorial_16_0.png" src="../_images/getting_started_tutorial_16_0.png" />
+</div>
+</div>
+<p>And to see what a frame of the 2D background looks like, we can plot it as</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(10,4))
+ax1.imshow(data.tpf[0])
+ax1.set_title(&#39;Target Pixel File&#39;)
+ax2.imshow(data.bkg_tpf[0])
+ax2.set_title(&#39;2D interpolated background&#39;);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tutorial_18_0.png" src="../_images/getting_started_tutorial_18_0.png" />
+</div>
+</div>
+<p>What does our automatically chosen aperture look like? And how does it compare to where the star falls on the TPF?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(10,4))
+ax1.imshow(data.tpf[0])
+ax1.set_title(&#39;Target Pixel File&#39;)
+ax2.imshow(data.aperture)
+ax2.set_title(&#39;Aperture&#39;);
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tutorial_20_0.png" src="../_images/getting_started_tutorial_20_0.png" />
+</div>
+</div>
+<p>Let’s save these data to a FITS file so we have them later. By default, this will be saved to a <code class="docutils literal notranslate"><span class="pre">~/.eleanor</span></code> directory, but that can be changed by setting a <code class="docutils literal notranslate"><span class="pre">directory</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>data.save()
+</pre></div>
+</div>
+</div>
+<p>With one line of code, we can pass this through as a <a class="reference external" href="https://github.com/KeplerGO/lightkurve">lightkurve</a> object and begin using the functionality of that package.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>lk = data.to_lightkurve()
+lk.plot()
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fad886fc1d0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tutorial_24_1.png" src="../_images/getting_started_tutorial_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="1.2-Stars-Observed-in-Multiple-Sectors">
+<h2>1.2 Stars Observed in Multiple Sectors<a class="headerlink" href="#1.2-Stars-Observed-in-Multiple-Sectors" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> has some built-in tools to make it easier to work with stars that are observed in multiple TESS sectors. Let’s consider WASP-100 again, which was observed in both Sectors 1 and 2. When we previously called <code class="docutils literal notranslate"><span class="pre">eleanor.Source()</span></code>, we can instead call <code class="docutils literal notranslate"><span class="pre">eleanor.multi_sectors()</span></code>, which will make a list of Source objects for all sectors requested.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>star = eleanor.multi_sectors(tic=38846515, sectors=[1,2])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_bkg.fits with expected size 78955200. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc.fits with expected size 158022720. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0001-4-1-cal-0902-1078_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0001-4-1_tess_v2_pm.txt with expected size 237847. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0002-4-1-cal-1490-0646_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0002-4-1-cal-1490-0646_tess_v2_bkg.fits with expected size 76677120. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0002-4-1-cal-1490-0646_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0002-4-1-cal-1490-0646_tess_v2_pc.fits with expected size 153463680. [astroquery.query]
+INFO: Found cached file /Users/bmontet/.eleanor/mastDownload/HLSP/hlsp_eleanor_tess_ffi_postcard-s0002-4-1-cal-1490-0646_tess_v2_pc/hlsp_eleanor_tess_ffi_postcard-s0002-4-1_tess_v2_pm.txt with expected size 231901. [astroquery.query]
+</pre></div></div>
+</div>
+<p>In this case, I only wanted sectors 1 and 2. However, I could have passed through <code class="docutils literal notranslate"><span class="pre">sectors='all'</span></code> to get all sectors in which this star was observed.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>print(star)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;eleanor.source.Source object at 0x7fadba3314e0&gt;, &lt;eleanor.source.Source object at 0x7fadaa132a58&gt;]
+</pre></div></div>
+</div>
+<p>Yep, it’s a list of objects! We can then call <code class="docutils literal notranslate"><span class="pre">eleanor.TargetData()</span></code> on each.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>plt.figure(figsize=(15,5))
+
+data = []
+plot_fmt = [&#39;k.&#39;, &#39;r.&#39;]
+
+for s in star:
+    datum = eleanor.TargetData(s, height=15, width=15, bkg_size=31, do_psf=False, do_pca=False)
+    data.append(datum)
+
+for sector, datum in enumerate(data):
+    q = datum.quality == 0
+    plt.plot(datum.time[q], datum.corr_flux[q]/np.median(datum.corr_flux[q]), plot_fmt[sector])
+
+plt.ylabel(&#39;Normalized Flux&#39;, fontsize=24)
+plt.xlabel(&#39;Time&#39;, fontsize=24)
+
+plt.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Loading file hlsp_eleanor_tess_ffi_tic38846515_s01_tess_v1.0.5_lc.fits found on disk
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/getting_started_tutorial_31_1.png" src="../_images/getting_started_tutorial_31_1.png" />
+</div>
+</div>
+<p>If you are only interested in one Sector your star was observed in, you can call <code class="docutils literal notranslate"><span class="pre">eleanor.Source(sector=1)</span></code> and specify the Sector you are interested in. If your star was observed in multiple sectors and you call <code class="docutils literal notranslate"><span class="pre">eleanor.Source()</span></code>, it will return the light curve from the most recent Sector the star was observed in.</p>
+</div>
+<div class="section" id="1.3-Good-practices">
+<h2>1.3 Good practices<a class="headerlink" href="#1.3-Good-practices" title="Permalink to this headline">¶</a></h2>
+<p>We’re still exploring what the best practices are generally. Good practices seem to differ across the detector, but here’s what we believe so far. If you discover anything that works well for you, we and other <span class="math notranslate nohighlight">\(\texttt{eleanor}\)</span> users would surely love to know them! You can also find some <a class="reference external" href="http://adina.feinste.in/eleanor/getting_started/tips_tricks.html">tips, tricks, and hacks</a> in the next example notebook.</p>
+<p>Good background subtraction is very important. The size of the region to use for an “ideal” background changes across the detector. Generally, bigger is better, we typically recommend using a region larger than the standard TPF. Currently, the background used must be a rectangle centered on the star, with size <code class="docutils literal notranslate"><span class="pre">bkg_size</span></code>.</p>
+<p>PSF modeling (<code class="docutils literal notranslate"><span class="pre">do_psf=True</span></code>) seems to work very well for relatively bright, isolated stars. Presently the only PSF models usable are Gaussian and Moffat profiles. Both Gaussian and Poisson likelihood functions are possible as well. Do note that this requires tensorflow&lt;2.0. Note that PSF modeling is very much in beta and our current implementation has known issues for very faint stars (fainter than I ~ 15, generally).</p>
+<p>If you find anything that works well for your science, or uncover any issues, please let us know! Github <a class="reference external" href="https://github.com/afeinstein20/eleanor/issues">issues</a> or <a class="reference external" href="https://github.com/afeinstein20/eleanor/pulls">pull requests</a> are welcomed.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tips_tricks.html" class="btn btn-neutral float-right" title="Tips, Tricks, and Hacks" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018-2020, Adina D. Feinstein.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../None"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
